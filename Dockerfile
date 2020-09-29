@@ -12,18 +12,23 @@ RUN apt-get -y install python3-pip
 RUN apt-get install -yq python3-tk
 RUN pip3 install --upgrade pip
 
+WORKDIR /root/
+COPY ./requirements.txt .
+RUN pip3 install -r requirements.txt
+
 # Tools
 RUN apt-get install -y zathura
 RUN apt-get install -y ranger
 RUN apt-get install -y vim
 
+COPY . /root/tools/
+RUN . /root/tools/install_vimrc.sh
+
+ 
+RUN vim -E -s +PlugInstall +visual +qall; echo $?
 
 
-RUN mkdir /root/src/
-WORKDIR /root/
-COPY ./requirements.txt .
-RUN pip3 install -r requirements.txt
-WORKDIR /root/src
+
 
 
 
