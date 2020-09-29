@@ -15,17 +15,13 @@ echo "Starts writing"
 sleep 0.5
 echo "====="
 echo ""
-echo 'set runtimepath+=~/.linux_runtime/vimrc
-
+echo 'set runtimepath+=~/tools/vimrc
 source ~/tools/vimrc/vimrcs/basic.vim
 source ~/tools/vimrc/vimrcs/filetypes.vim
 source ~/tools/vimrc/vimrcs/plugins_config.vim
 source ~/tools/vimrc/vimrcs/extended.vim
-
-try
-source ~/.linux_runtime/vimrc/custom/my_vim_configs.vim
-catch
-endtry' >> ~/.vimrc
+source ~/tools/vimrc/custom/my_vim_configs.vim
+' >> ~/.vimrc
 
 echo ""
 echo "====="
